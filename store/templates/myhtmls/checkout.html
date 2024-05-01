@@ -66,4 +66,21 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+
+    var shipping = '{{order.shipping}}'
+    if(shipping == 'False'){
+        document.getElementById('shipping-info').innerHTML =''
+    }
+    var form = document.getELementById('form')
+
+    form.addEventListener('submit', function(e){
+
+        e.preventDefaut()
+        console.Log('Form submitted ... ')
+        document.getELementById('form-button').classList.add('hidden')
+        document.getELementById('payment-info').classList.remove('hidden')
+    })
+
+</script>
 {%endblock content%}
